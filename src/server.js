@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost:27017/react', {
 });
 */
 
-mongoose.connect('mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/test?retryWrites=true', { 
+mongoose.connect('mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/m42?retryWrites=true', { 
 	useNewUrlParser: true
 });
 
