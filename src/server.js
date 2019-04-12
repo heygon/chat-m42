@@ -16,9 +16,16 @@ io.on('connection', socket => {
 	});
 });
 
+/*
 mongoose.connect('mongodb://localhost:27017/react', { 
 	useNewUrlParser: true
 });
+*/
+
+mongoose.connect('mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/test?retryWrites=true', { 
+	useNewUrlParser: true
+});
+
 
 app.use((req, res, next) => {
 	req.io = io;
