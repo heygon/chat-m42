@@ -8,6 +8,7 @@ const FileController = require('./controllers/FileController');
 
 routes.post('/newFolder', BoxController.store);
 routes.get('/listfolder', BoxController.list);
+routes.put('/removefolder', BoxController.remove);
 routes.get('/folder/:id', BoxController.show);
 routes.post("/folder/:id/files", multer(multerConfig).single("file"), FileController.store);
 

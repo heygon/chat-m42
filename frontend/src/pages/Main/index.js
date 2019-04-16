@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Link} from 'react-router-dom';
 
-import { MdInsertDriveFile,MdRotateLeft } from 'react-icons/md';
+import { MdFolder,MdRotateLeft,MdMoreVert } from 'react-icons/md';
 import { distanceInWords } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
@@ -11,12 +12,14 @@ import './styles.css';
 export default class Main extends Component {
     state = {
         newFolder: "",
-        folder: {}
+        folder: []
     };
 
     async componentDidMount() {
         const response = await api.get(`listfolder/`);
         this.setState({ folder: response.data });
+
+        console.log(this.state.folder);
     }
 
 
@@ -34,19 +37,9 @@ export default class Main extends Component {
         this.setState({ newFolder: e.target.value });
     };
 
-    handleUpload = (files) => {
-        files.forEach(file => {
-            const data = new FormData();
-            const box  = this.props.match.params.id; 
-            
-            data.append('file', file);
-            api.post(`folder/${box}/files`, data);
-        });
-    }
-
-
 
     render() {
+        const { folder } = this.state.folder;
         return (
 
             <div id = "main-container">
@@ -62,22 +55,31 @@ export default class Main extends Component {
                 </form>
 
 
-                <ul> 
-                    { this.state.folder && this.state.folder.map(folder => ( 
-                        <li key={folder._id}>
-                            <a className = "fileInfo" href = { `folder/${folder._id}/files` } target = "_blank">
+                <div className="listaFolder">
+                    <h2>Suas pastas</h2>
+                    <br/>
+                    <ul> 
+                        { folder && folder.map(folders => ( 
                             
-                            <MdInsertDriveFile className = "icon" size = { 24 } color = "#a5cfff" />
-                            <strong> { folder.title } </strong>
-                            </a>
-                            <span> há { " " }
-                                    { distanceInWords(folder.createdAt, new Date(), {
-                                        locale: pt
-                                    })}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
+                            <li key={folders._id}>
+                                <Link to={`/folder/${folders._id}`}>
+                                    <div className = "folderInfo" >
+                                        <MdFolder className = "icon" size = { 40 } />
+                                        <strong> { folders.title }</strong>
+                                        <br/>
+                                        <span className="criadoA"> há { " " }
+                                            { distanceInWords(folders.createdAt, new Date(), {
+                                                locale: pt
+                                            })}
+                                        </span>
+                                    </div>
+                                </Link>
+
+                                <MdMoreVert className = "icon-actions" size = { 30 } />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
             </div>
 

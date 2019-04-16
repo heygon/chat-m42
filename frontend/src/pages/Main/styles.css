@@ -55,3 +55,82 @@
 #main-container form button:hover{
 	background: #66ccff;
 }
+
+.listaFolder{
+	width:90%;
+	margin-left:5%;
+	margin-top:30px;
+	border:solid 1px #ddd;
+	box-shaddow:0px 0px 5px #ddd;
+	border-radius:5px;
+	padding:20px;
+}
+
+.listaFolder ul{
+	border:solid 1px #ddd;
+	border-radius:5px;
+	padding:0px;
+}
+.listaFolder li{
+	list-style: none;
+	padding:0px 15px;
+	border:solid 1px transparent;
+	border-bottom:solid 1px #ddd;
+	height: 75px;
+	margin:0px;
+}
+.listaFolder li:last-child{
+	border-bottom:solid 1px transparent;
+}
+
+.listaFolder a{
+	text-decoration: none;
+}
+.listaFolder li .folderInfo{
+	width:95%;
+	cursor:pointer;
+}
+
+
+
+.listaFolder li .icon{
+	position:relative;
+	top:20px;
+	color:#a5cfff;
+}
+.listaFolder li strong{
+	color:#6e93a5;
+}
+
+.listaFolder li strong:first-letter {
+    text-transform: uppercase;
+}
+
+.listaFolder li .icon-actions{
+	position:relative;
+	top:-35px;
+	float:right;
+	color:#ddd;
+	cursor:pointer;
+}
+
+.listaFolder li .criadoA{
+	font-size:10px;
+	margin-left:45px;
+	color:#b4b4b4;
+}
+
+
+.listaFolder li:hover{
+	background: #f9f9f9;
+	border-radius:0px 0px 5px 5px;
+	border:solid 1px #ddd;
+}
+
+.listaFolder li:hover .icon-actions, .listaFolder li:hover .icon{
+	color:#1598da;
+}
+
+.listaFolder li:hover strong{
+	color:#074361;
+}
