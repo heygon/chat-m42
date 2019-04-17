@@ -21,6 +21,7 @@ class BoxController {
         const box = await Box.find();
         return res.json(box);
     }
+    
     async remove(req, res) {
         const box = await Box.find();
         return res.json(box);

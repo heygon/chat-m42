@@ -1,0 +1,51 @@
+html,body{
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #a4defb, #ceebf9);
+}
+#main-container{
+    clear:both;
+    border:solid 1px #ddd;
+    width: 300px;
+    height: 350px !important;
+    margin-left:calc(50% - 150px);
+    margin-top:calc(25% - 175px) ;
+    box-shadow:0px 0px 15px #000 !important;
+    border-radius:5px;
+    background:#fff !important;
+}
+
+#main-container header{
+    background: transparent !important;
+    display:block !important;
+    text-align:center !important;
+}
+#main-container header h1{
+    width:100% !important;
+    margin-top:10px;
+}
+
+
+#main-container form{
+    clear:both;
+    width:100% !important;
+    display:block !important;
+    margin-left:0px !important;
+}
+
+#main-container form h3{
+    text-align:center;
+}
+
+#main-container form input{
+    margin-bottom:10px;
+    width:90% !important;
+    margin-top:0px !important;
+    margin-left:5% !important;
+}
+
+#main-container form button{
+    width:90% !important;
+    margin-top:0px !important;
+    margin-left:5% !important;
+}

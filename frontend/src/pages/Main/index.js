@@ -39,7 +39,6 @@ export default class Main extends Component {
 
 
     render() {
-        const { folder } = this.state.folder;
         return (
 
             <div id = "main-container">
@@ -59,7 +58,7 @@ export default class Main extends Component {
                     <h2>Suas pastas</h2>
                     <br/>
                     <ul> 
-                        { folder && folder.map(folders => ( 
+                        { this.state.folder && this.state.folder.map(folders => ( 
                             
                             <li key={folders._id}>
                                 <Link to={`/folder/${folders._id}`}>
@@ -82,7 +81,6 @@ export default class Main extends Component {
                 </div>
 
             </div>
-
 
         );
     }
