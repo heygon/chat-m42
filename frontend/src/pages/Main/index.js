@@ -16,28 +16,28 @@ export default class Main extends Component {
 			title: this.state.newBox
 		});
 
-		console.log(response.data);
+		this.props.history.push(`/box/${response.data._id}`);
 	};
 
 	handleInputChange = e => {
 		this.setState({ newBox: e.target.value });
 	};
 
-  render() {
-    return (
-      
-    	<div id="main-container">
-    		<form onSubmit={this.handleSubmit}>
-    			<img src={logo} alt="" />
-    			<input 
-    				placeholder="Nome do box" 
-    				value={ this.state.newBox } 
-    				onChange={ this.handleInputChange }
-    			/>
-    			<button type="submit">Criar</button>
-    		</form>
-    	</div>
+	render() {
+		return (
 
-    );
-  }
+			<div id="main-container">
+				<form onSubmit={this.handleSubmit}>
+					<img src={logo} alt="" />
+					<input 
+						placeholder="Nome do box" 
+						value={ this.state.newBox } 
+						onChange={ this.handleInputChange }
+					/>
+					<button type="submit">Criar</button>
+				</form>
+			</div>
+
+		);
+	}
 }

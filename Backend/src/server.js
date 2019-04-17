@@ -16,22 +16,17 @@ io.on('connection', socket => {
 	});
 });
 
+//const db = 'mongodb://192.168.0.205:27017/react';
+const db = 'mongodb://187.21.49.229:27017/react';
+//const db = 'mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/m42?retryWrites=true';
+//const db = 'mongodb://localhost:27017/react';
 
-mongoose.connect('mongodb://localhost:27017/react', { 
+mongoose.connect(db, {
 	useNewUrlParser: true
 });
-
-/*
-mongoose.connect('mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/m42?retryWrites=true', { 
-	useNewUrlParser: true
-});
-*/
-
-
 
 app.use((req, res, next) => {
 	req.io = io;
-
 	return next();
 })
 
