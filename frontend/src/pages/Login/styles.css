@@ -1,51 +1,54 @@
 html,body{
+    background: linear-gradient(to bottom, #f9f9f9, #ddd);
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(to bottom, #a4defb, #ceebf9);
 }
 #main-container{
     clear:both;
-    border:solid 1px #ddd;
-    width: 300px;
+    width:350px;
     height: 350px !important;
-    margin-left:calc(50% - 150px);
-    margin-top:calc(25% - 175px) ;
-    box-shadow:0px 0px 15px #000 !important;
+    margin-left:calc(50% - 175px);
+    border:solid 1px #ddd;
+    margin-top: 10%;
     border-radius:5px;
-    background:#fff !important;
+    box-shadow:0px 0px 10px #a29f9f;
 }
 
 #main-container header{
+    clear: both;
     background: transparent !important;
-    display:block !important;
-    text-align:center !important;
+    text-align:center;
 }
 #main-container header h1{
-    width:100% !important;
-    margin-top:10px;
+    width:100%;
 }
-
 
 #main-container form{
-    clear:both;
+    clear: both;
+    display: block !important;
     width:100% !important;
-    display:block !important;
     margin-left:0px !important;
 }
-
 #main-container form h3{
     text-align:center;
+    margin-bottom:20px
 }
 
 #main-container form input{
-    margin-bottom:10px;
     width:90% !important;
-    margin-top:0px !important;
     margin-left:5% !important;
+    margin-top:10px !important;
 }
 
 #main-container form button{
     width:90% !important;
-    margin-top:0px !important;
     margin-left:5% !important;
+}
+
+#main-container .register{
+    text-align: center;
+}
+#main-container .register a{
+    text-decoration: none;
+    color:#000;
 }

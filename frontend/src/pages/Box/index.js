@@ -5,9 +5,9 @@ import pt from 'date-fns/locale/pt';
 import Dropzone from 'react-dropzone';
 import socket from 'socket.io-client';
 
-import { MdInsertDriveFile, MdRotateLeft } from 'react-icons/md';
-import logo from '../../assets/m42.png';
+import { MdInsertDriveFile,MdRotateLeft } from 'react-icons/md';
 
+import logo from '../../assets/m42.png';
 import './styles.css';
 
 export default class Box extends Component {

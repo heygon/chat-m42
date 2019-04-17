@@ -7,10 +7,11 @@ import { MdFolder,MdRotateLeft,MdMoreVert } from 'react-icons/md';
 import logo from '../../assets/m42.png';
 import './styles.css';
 
-export default class Login extends Component {
+export default class Register extends Component {
     state = {
         login: "",
-        senha: ""
+        senha: "",
+        rash : ""
     };
 
     handleSubmit = async e => {
@@ -45,17 +46,17 @@ export default class Login extends Component {
                 </header>
 
                 <form onSubmit = { this.handleSubmit }>
-                    <h3>Acessar a plataforma: &nbsp;</h3>
+                    <h3>Registrar-se: &nbsp;</h3>
                     <input placeholder="Login" value={ this.state.login } onChange={ this.handleLoginChange }/>
                     <input placeholder="Senha" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
-                    <button type = "submit" > Entrar < /button> 
+                    <button type = "submit" > Criar conta < /button> 
                 </form>
                 <br/>
                 
                 
                 <div className="register">
-                    <Link to={'/register'}>
-                        Cadastre-se
+                    <Link to={'/login'}>
+                        Voltar
                     </Link>
                 </div>
                 
