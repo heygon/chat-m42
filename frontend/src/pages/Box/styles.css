@@ -1,0 +1,105 @@
+#box-container {
+    padding:0px;
+}
+
+#box-container header {
+    display: flex;
+    justify-content: Auto;
+    align-items: center;
+    height: 50px; 
+    background: #f9f9f9;
+}
+
+#box-container header h1 {
+    font-size: 21px;
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: 1px solid #ddd;
+}
+
+#box-container header button svg {
+    margin-right: 10px;
+}
+
+#box-container header button:hover {
+    opacity: 0.9;
+}
+
+#box-container header .logo {
+    width: 60px;
+    margin-left:15px;
+}
+
+#box-container header .Voltar {
+    margin-left:30px;
+    margin-top:-10px;
+}
+#box-container header .Voltar svg {
+    position:relative;
+    top:7px;
+}
+
+
+
+#box-container .content{
+    margin:10px 20px;
+}
+
+#box-container .upload {
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    border: 1px dashed #ddd;
+    color: #999;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+#box-container ul {
+    margin: 30px 0;
+    list-style: none;
+}
+
+#box-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px;
+    border-bottom: solid 1px #ddd;
+}
+
+#box-container ul li a,
+#box-container ul li span {
+    color: #999;
+}
+
+#box-container ul li:hover {
+    background: #ddd;
+}
+
+#box-container ul li:hover a,
+#box-container ul li:hover span {
+    color: #333;
+}
+
+#box-container ul li:hover .icon {
+    color: #3a73f9 !important;
+}
+
+#box-container ul li .fileInfo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#box-container ul li .filwInfo strong {
+    font-weight: normal;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #333;
+}
+
+#box-container ul li span {
+    color: #999;
+    font-size: 13px;
+}

@@ -1,45 +1,136 @@
 #main-container{
 	height: 100%;
+}
 
+#main-container header{
+	width:100%;
+	background: #ddd;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding:10px;
+}
+
+#main-container header img{
+	width:70px;
 }
 
 
 #main-container form{
-	width: 300px;
-
+	width: 600px;
+	margin-left:calc(50% - 300px);
 	display: flex;
-	flex-direction: column;
-	padding: 20px;
-	border-radius:5px;
-	box-shadow: 0px 0px 10px #3f3f3f;
+	justify-content: center;
 }
-#main-container form img{
-	width: 100%;
-	height: auto;
+#main-container form h3{
+	font-size:1.5em;
+	margin-top:34px;
 }
 
 #main-container form input{
-	height: 48px;
-	border: 1px solid rgb(192, 191, 191);
-	border-radius: 4px;
-	font-size: 16px;
-	padding: 0 20px;
-	margin-top: 30px;
-}
-
-#main-container form button{
-	height: 48px;
-	background: #66ccff;
+	height: 35px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	font-size: 16px;
 	padding: 0 20px;
-	margin-top: 10px;
+	margin-top: 30px;
+	width:calc(49% - 10px);
+}
+
+#main-container form button{
+	height: 35px;
+	background: #267095;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 0 20px;
+	margin-top: 30px;
+	margin-left:10px;
 	color: #fff;
 	font-weight: bold;
 	border:0;
 	cursor: pointer;
+	width:100px;
+}
+#main-container form button:hover{
+	background: #66ccff;
+}
+
+.listaFolder{
+	width:90%;
+	margin-left:5%;
+	margin-top:30px;
+	border:solid 1px #ddd;
+	box-shaddow:0px 0px 5px #ddd;
+	border-radius:5px;
+	padding:20px;
+}
+
+.listaFolder ul{
+	border:solid 1px #ddd;
+	border-radius:5px;
+	padding:0px;
+}
+.listaFolder li{
+	list-style: none;
+	padding:0px 15px;
+	border:solid 1px transparent;
+	border-bottom:solid 1px #ddd;
+	height: 75px;
+	margin:0px;
+}
+.listaFolder li:last-child{
+	border-bottom:solid 1px transparent;
+}
+
+.listaFolder a{
+	text-decoration: none;
+}
+.listaFolder li .folderInfo{
+	width:95%;
+	cursor:pointer;
+}
+
+
+
+.listaFolder li .icon{
+	position:relative;
+	top:20px;
+	color:#a5cfff;
+}
+.listaFolder li strong{
+	color:#6e93a5;
+}
+
+.listaFolder li strong:first-letter {
+    text-transform: uppercase;
+}
+
+.listaFolder li .icon-actions{
+	position:relative;
+	top:-35px;
+	float:right;
+	color:#ddd;
+	cursor:pointer;
+}
+
+.listaFolder li .criadoA{
+	font-size:10px;
+	margin-left:45px;
+	color:#b4b4b4;
+}
+
+
+.listaFolder li:hover{
+	background: #f9f9f9;
+	border-radius:0px 0px 5px 5px;
+	border:solid 1px #ddd;
+}
+
+.listaFolder li:hover .icon-actions, .listaFolder li:hover .icon{
+	color:#1598da;
+}
+
+.listaFolder li:hover strong{
+	color:#074361;
 }
