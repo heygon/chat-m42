@@ -1,33 +1,24 @@
-#home-container{
-	height: 100%;
+.containerHome nav .icon{
+	margin-top:5px;
 }
-
-#home-container header{
-	width:100%;
-	background: #ddd;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding:10px;
+.containerHome nav img{
+	margin-top:10px;
 }
-
-#home-container header img{
-	width:70px;
+.containerHome nav h4{
+	margin-top:15px !important;
 }
-
-
-#home-container form{
+.containerHome form{
 	width: 600px;
 	margin-left:calc(50% - 300px);
 	display: flex;
 	justify-content: center;
 }
-#home-container form h3{
+.containerHome form h3{
 	font-size:1.5em;
 	margin-top:34px;
 }
 
-#home-container form input{
+.containerHome form input{
 	height: 35px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -37,7 +28,7 @@
 	width:calc(49% - 10px);
 }
 
-#home-container form button{
+.containerHome form button{
 	height: 35px;
 	background: #267095;
 	border: 1px solid #ddd;
@@ -52,7 +43,7 @@
 	cursor: pointer;
 	width:100px;
 }
-#home-container form button:hover{
+.containerHome form button:hover{
 	background: #66ccff;
 }
 

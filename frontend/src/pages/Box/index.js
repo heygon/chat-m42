@@ -4,6 +4,7 @@ import { distanceInWords } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Dropzone from 'react-dropzone';
 import socket from 'socket.io-client';
+import M from 'materialize-css';
 
 import { MdInsertDriveFile,MdRotateLeft } from 'react-icons/md';
 
@@ -49,6 +50,10 @@ export default class Box extends Component {
 
     render() {
         return (             
+            
+
+            
+            
             <div id = "box-container">
                 <header>
                     <img src = { logo } alt = "" className = "logo" />

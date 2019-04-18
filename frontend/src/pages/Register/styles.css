@@ -1,4 +1,7 @@
-#main-container{
-    clear:both;
-    height: 400px !important;
+.cardRegister{
+    margin-top:8%;
+}
+
+.cardRegister button{
+    border-radius:50px;
 }

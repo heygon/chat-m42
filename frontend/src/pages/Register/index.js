@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 
+
 import { MdFolder,MdRotateLeft,MdMoreVert } from 'react-icons/md';
 
 import logo from '../../assets/m42.png';
@@ -31,40 +32,58 @@ export default class Register extends Component {
     handleNomeChange = e => {
         this.setState({ nome: e.target.value });
     };
-    handleSenhaChange = e => {
-        this.setState({ senha: e.target.value });
-    };
     handleEmailChange = e => {
         this.setState({ email: e.target.value });
+    };
+    handleSenhaChange = e => {
+        this.setState({ senha: e.target.value });
     };
 
 
     render() {
         return (
+            <div className="container">
+                <div className="row">
+                    <div className="col s6 offset-s3 card cardRegister">
+                        <div className="card-content">
+                            
+                            <img src={ logo } alt="" className="col s4" />
+                            <h3 className="col s8"><strong>Box Files M42</strong></h3>
+                        
 
-            <div id = "main-container">
-                <header>
-                    <img src = { logo } alt = "" />
-                    <br/>
-                    <h1>Box Files M42</h1>
-                </header>
+                            <form onSubmit = { this.handleSubmit } className="col s12">
+                                <h5 className="col s12 center-align">Registrar-se:</h5>
+                                
+                                <div className="input-field col s12">
+                                    <input id="Nome" type="text" className="validate" value={ this.state.nome } onChange={ this.handleNomeChange }/>
+                                    <label htmlFor="Nome">Nome</label>
+                                </div>
 
-                <form onSubmit = { this.handleSubmit }>
-                    <h3>Registrar-se: &nbsp;</h3>
-                    <input placeholder="Nome" value={ this.state.nome } onChange={ this.handleNomeChange }/>
-                    <input placeholder="E-mail" value={this.state.email} onChange={this.handleEmailChange} />
-                    <input placeholder="Senha" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
-                    <button type = "submit" > Criar conta < /button> 
-                </form>
-                <br/>
-                
-                
-                <div className="register">
-                    <Link to={'/login'}>
-                        Voltar
-                    </Link>
+                                <div className="input-field col s12">
+                                    <input id="Email" type="text" className="validate" value={ this.state.email } onChange={ this.handleEmailChange }/>
+                                    <label htmlFor="Email">E-mail</label>
+                                </div>
+
+                                <div className="input-field col s12">
+                                    <input id="Senha" type="password" className="validate" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
+                                    <label htmlFor="Senha">Senha</label>
+                                </div>
+
+                                <button type="submit" className="btn blue col s12" > Criar conta </button> 
+                            </form>
+                            
+                            <div className="col s12">&nbsp;</div>
+                            
+                            <div className="register col s12 center-align">
+                                <Link to={'/'}>
+                                    Voltar
+                                </Link>
+                            </div>
+                            <div className="col s12">&nbsp;</div>
+                        </div>
+                        
+                    </div>
                 </div>
-                
             </div>
 
 

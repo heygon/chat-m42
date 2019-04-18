@@ -36,35 +36,52 @@ export default class Login extends Component {
     render() {
         return (
 
-            <div id = "main-container">
-                <header>
-                    <img src = { logo } alt = "" />
-                    <br/>
-                    <h1>Box Files M42</h1>
-                </header>
+            <div className="container">
+                <div className="row">
+                    <div className="col s6 offset-s3 card cardLogin">
+                        <div className="card-content">
+                            <img src={ logo } alt="" className="col s4" />
+                            <h3 className="col s8"><strong>Box Files M42</strong></h3>
+                        
 
-                <form onSubmit = { this.handleSubmit }>
-                    <h3>Acessar a plataforma: &nbsp;</h3>
-                    <input placeholder="E-mail" value={ this.state.email } onChange={ this.handleEmailChange }/>
-                    <input placeholder="Senha" type="password" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
-                    { 
-                        this.state.logado && this.state.logado.map(logado => (
-                            this.props.history.push(`/home/${logado._id}`)
-                        ))
-                    }            
-                    <button type = "submit" > Entrar < /button> 
-                </form>
-                <br/>
-                
-                
-                <div className="register">
-                    <Link to={'/register'}>
-                        Cadastre-se
-                    </Link>
+                            <form onSubmit = { this.handleSubmit }>
+                                <h5 className="col s12 center-align">Acessar a plataforma:</h5>
+
+                                <div className="input-field col s12">
+                                    <input id="Email" type="text" className="validate" value={ this.state.email } onChange={ this.handleEmailChange }/>
+                                    <label htmlFor="Email">E-mail</label>
+                                </div>
+
+                                <div className="input-field col s12">
+                                    <input id="Senha" type="password" className="validate" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
+                                    <label htmlFor="Senha">Senha</label>
+                                </div>
+
+                                { 
+                                    this.state.logado && this.state.logado.map(logado => (
+                                        this.props.history.push(`/home/${logado._id}`)
+                                    ))
+                                }
+                                <div className="col s12">
+                                    <button type="submit" className="col s12 btn blue" > Entrar </button> 
+                                </div>
+                            </form>
+                            
+                            <div className="col s12">&nbsp;</div>
+                            
+                            
+                            <div className="register col s12 center-align">
+                                <Link to={'/register'}>
+                                    Cadastre-se
+                                </Link>
+                            </div>
+
+                            <div className="col s12">&nbsp;</div>
+
+                        </div>
+                    </div>
                 </div>
-                
             </div>
-
 
         );
     }
