@@ -42,7 +42,7 @@ export default class Main extends Component {
         const { folder } = this.state.folder;
         return (
 
-            <div id = "main-container">
+            <div id = "home-container">
                 <header>
                     <img src = { logo } alt = "" />
                     <h1>Box Files M42</h1>

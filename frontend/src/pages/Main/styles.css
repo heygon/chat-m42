@@ -1,8 +1,8 @@
-#main-container{
+#home-container{
 	height: 100%;
 }
 
-#main-container header{
+#home-container header{
 	width:100%;
 	background: #ddd;
 	display: flex;
@@ -11,23 +11,23 @@
 	padding:10px;
 }
 
-#main-container header img{
+#home-container header img{
 	width:70px;
 }
 
 
-#main-container form{
+#home-container form{
 	width: 600px;
 	margin-left:calc(50% - 300px);
 	display: flex;
 	justify-content: center;
 }
-#main-container form h3{
+#home-container form h3{
 	font-size:1.5em;
 	margin-top:34px;
 }
 
-#main-container form input{
+#home-container form input{
 	height: 35px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -37,7 +37,7 @@
 	width:calc(49% - 10px);
 }
 
-#main-container form button{
+#home-container form button{
 	height: 35px;
 	background: #267095;
 	border: 1px solid #ddd;
@@ -52,7 +52,7 @@
 	cursor: pointer;
 	width:100px;
 }
-#main-container form button:hover{
+#home-container form button:hover{
 	background: #66ccff;
 }
 

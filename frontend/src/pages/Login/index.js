@@ -2,31 +2,30 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 
-import { MdFolder,MdRotateLeft,MdMoreVert } from 'react-icons/md';
-
 import logo from '../../assets/m42.png';
 import './styles.css';
 
 export default class Login extends Component {
     state = {
-        login: "",
-        senha: ""
+        email: "",
+        senha: "",
+        logado: []
     };
 
     handleSubmit = async e => {
         e.preventDefault();
 
-        console.log(this.state.login+' - '+this.state.senha);
         const response = await api.post('login', {
-            title: this.state.newFolder
+            email: this.state.email,
+            senha: this.state.senha,
         });
 
-        this.props.history.push(`/folder/${response.data._id}`);
+        this.setState({ logado: response.data });
         
     };
 
-    handleLoginChange = e => {
-        this.setState({ login: e.target.value });
+    handleEmailChange = e => {
+        this.setState({ email: e.target.value });
     };
 
     handleSenhaChange = e => {
@@ -46,8 +45,13 @@ export default class Login extends Component {
 
                 <form onSubmit = { this.handleSubmit }>
                     <h3>Acessar a plataforma: &nbsp;</h3>
-                    <input placeholder="Login" value={ this.state.login } onChange={ this.handleLoginChange }/>
-                    <input placeholder="Senha" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
+                    <input placeholder="E-mail" value={ this.state.email } onChange={ this.handleEmailChange }/>
+                    <input placeholder="Senha" type="password" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
+                    { 
+                        this.state.logado && this.state.logado.map(logado => (
+                            this.props.history.push(`/home/${logado._id}`)
+                        ))
+                    }            
                     <button type = "submit" > Entrar < /button> 
                 </form>
                 <br/>

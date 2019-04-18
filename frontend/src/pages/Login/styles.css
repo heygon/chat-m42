@@ -6,21 +6,24 @@ html,body{
 #main-container{
     clear:both;
     width:350px;
-    height: 350px !important;
+    height: 250px;
     margin-left:calc(50% - 175px);
     border:solid 1px #ddd;
     margin-top: 10%;
     border-radius:5px;
     box-shadow:0px 0px 10px #a29f9f;
+    padding-top:20px
 }
 
 #main-container header{
-    clear: both;
-    background: transparent !important;
-    text-align:center;
-}
-#main-container header h1{
     width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:10px;
+}
+#main-container header img{
+    width:70px;
 }
 
 #main-container form{
@@ -29,20 +32,41 @@ html,body{
     width:100% !important;
     margin-left:0px !important;
 }
+
 #main-container form h3{
     text-align:center;
-    margin-bottom:20px
+    margin-bottom:20px;
+    font-size:1.5em;
 }
 
 #main-container form input{
-    width:90% !important;
-    margin-left:5% !important;
-    margin-top:10px !important;
+    width:90%;
+    margin-left:5%;
+    margin-top:10px;
+	height: 35px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 0 20px;
 }
 
 #main-container form button{
-    width:90% !important;
-    margin-left:5% !important;
+	height: 35px;
+	background: #267095;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 0 20px;
+	margin-top: 30px;
+	color: #fff;
+	font-weight: bold;
+	border:0;
+	cursor: pointer;
+	width:90%;
+    margin-left:5%;
+}
+#main-container form button:hover{
+	background: #66ccff;
 }
 
 #main-container .register{

@@ -8,6 +8,7 @@ const BoxController  = require('./controllers/BoxController');
 const FileController = require('./controllers/FileController');
 
 routes.post('/login', UserController.login);
+routes.post('/register', UserController.register);
 routes.post('/newFolder', BoxController.store);
 routes.get('/listfolder', BoxController.list);
 routes.put('/removefolder', BoxController.remove);

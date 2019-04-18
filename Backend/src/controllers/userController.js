@@ -7,22 +7,20 @@ class UserController {
             nome  :req.body.nome,
             email :req.body.email,
             senha :req.body.senha,
-            Perfil:1,
-            Status:1
+            perfil:req.body.perfil,
+            status:req.body.status
         });
         return res.json(user);
     }
 
     async login(req, res) {
 
-        const box = await Box.find({
-            nome:req.body.login,
+        const lg = await User.find({
+            email :req.body.email,
             senha: req.body.senha
-        }).populate({
-            path: "files"
         });
 
-        return res.json(box);
+        return res.json(lg);
     }
 }
 

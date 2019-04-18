@@ -9,29 +9,33 @@ import './styles.css';
 
 export default class Register extends Component {
     state = {
-        login: "",
+        nome: "",
+        email: "",
         senha: "",
-        rash : ""
     };
 
     handleSubmit = async e => {
         e.preventDefault();
 
-        console.log(this.state.login+' - '+this.state.senha);
-        const response = await api.post('login', {
-            title: this.state.newFolder
+        const response = await api.post('register', {
+            nome   : this.state.nome,
+            email  : this.state.email,
+            senha  : this.state.senha,
+            perfil : 1,
+            status : 1
         });
 
-        this.props.history.push(`/folder/${response.data._id}`);
-        
+        this.props.history.push(`home/${response.data._id}`);        
     };
 
-    handleLoginChange = e => {
-        this.setState({ login: e.target.value });
+    handleNomeChange = e => {
+        this.setState({ nome: e.target.value });
     };
-
     handleSenhaChange = e => {
         this.setState({ senha: e.target.value });
+    };
+    handleEmailChange = e => {
+        this.setState({ email: e.target.value });
     };
 
 
@@ -47,7 +51,8 @@ export default class Register extends Component {
 
                 <form onSubmit = { this.handleSubmit }>
                     <h3>Registrar-se: &nbsp;</h3>
-                    <input placeholder="Login" value={ this.state.login } onChange={ this.handleLoginChange }/>
+                    <input placeholder="Nome" value={ this.state.nome } onChange={ this.handleNomeChange }/>
+                    <input placeholder="E-mail" value={this.state.email} onChange={this.handleEmailChange} />
                     <input placeholder="Senha" value={ this.state.senha } onChange={ this.handleSenhaChange }/>
                     <button type = "submit" > Criar conta < /button> 
                 </form>

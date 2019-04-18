@@ -8,20 +8,20 @@ const User = new mongoose.Schema({
 	email:{
 		type: String,
 		required: true
-    },
-    Rash:{
+	},
+	senha:{
 		type: String,
 		required: true
-    },
-    avatar: [{ type: mongoose.Schema.Types.ObjectId, ref: "File"}],
-    Perfil:{
+	},
+  avatar: [{ type: mongoose.Schema.Types.ObjectId, ref: "File"}],
+  perfil:{
 		type: String,
 		required: true
-    },
-    Status:{
+  },
+  status:{
 		type: String,
 		required: true
-    }
+  }
 },{
 	timestamps: true
 });
