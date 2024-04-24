@@ -2,13 +2,17 @@ const express  = require('express');
 const mongoose = require('mongoose'); 
 const path     = require('path');
 const cors     = require('cors');
+const env      = require('dotenv/config');
+
 
 const app      = express(); 
-
+const server   = require('http').Server(app);
+const io       = require('socket.io')(server);
 app.use(cors());
 
-const server = require('http').Server(app);
-const io     = require('socket.io')(server);
+
+mongoose.connect(process.env.MONGO, { useNewUrlParser: true });
+
 
 io.on('connection', socket => {
 	socket.on("connectRoom", box => {
@@ -16,14 +20,6 @@ io.on('connection', socket => {
 	});
 });
 
-//const db = 'mongodb://192.168.0.205:27017/react';
-//const db = 'mongodb://187.21.49.229:27017/react';
-//const db = 'mongodb+srv://m42:4595995ab@cluster0-nqrek.mongodb.net/m42?retryWrites=true';
-const db = 'mongodb://localhost:27017/react';
-
-mongoose.connect(db, {
-	useNewUrlParser: true
-});
 
 app.use((req, res, next) => {
 	req.io = io;
@@ -34,6 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
+app.use((req,res) => { res.json({ 'live':true }) });
 app.use(require('./routes'));
 
 server.listen(process.env.PORT || 3333);
